@@ -29,7 +29,7 @@
       "args": {
         "size": 10,
         "image": {
-          "name": "^cirros.*-disk$"
+          "name": "cirros"
         },
         "flavor": {
           "name": "{{flavor_name}}"
@@ -60,7 +60,7 @@
           "name": "{{flavor_name}}"
         },
         "image": {
-          "name": "^cirros.*-disk$"
+          "name": "cirros"
         },
         "create_volume_params": {
           "availability_zone": "{{availability_zone}}"
@@ -685,7 +685,7 @@
         "disk_format": "raw",
         "do_delete": true,
         "image": {
-          "name": "^cirros.*-disk$"
+          "name": "cirros"
         }
       },
       "runner": {
@@ -711,7 +711,7 @@
         "disk_format": "raw",
         "do_delete": true,
         "image": {
-          "name": "^cirros.*-disk$"
+          "name": "cirros"
         }
       },
       "runner": {
@@ -759,7 +759,7 @@
       "args": {
         "size": 1,
         "image": {
-          "name": "^cirros.*-disk$"
+          "name": "cirros"
         }
       },
       "runner": {
@@ -897,7 +897,7 @@
         },
         "servers": {
           "image": {
-            "name": "^cirros.*-disk$"
+            "name": "cirros"
           },
           "flavor": {
             "name": "{{flavor_name}}"
@@ -928,7 +928,7 @@
         },
         "servers": {
           "image": {
-            "name": "^cirros.*-disk$"
+            "name": "cirros"
           },
           "flavor": {
             "name": "{{flavor_name}}"
@@ -959,7 +959,7 @@
         },
         "servers": {
           "image": {
-            "name": "^cirros.*-disk$"
+            "name": "cirros"
           },
           "flavor": {
             "name": "{{flavor_name}}"
@@ -988,7 +988,7 @@
         },
         "servers": {
           "image": {
-            "name": "^cirros.*-disk$"
+            "name": "cirros"
           },
           "flavor": {
             "name": "{{flavor_name}}"
