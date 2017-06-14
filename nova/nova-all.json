@@ -485,109 +485,7 @@
       }
     }
   ],
-
-  "NovaServers.boot_server_and_attach_interface": [
-    {
-      "args": {
-        "flavor": {
-          "name": "{{flavor_name}}"
-        },
-        "image": {
-          "name":  "{{image_name}}"
-        },
-        "network_create_args": {},
-        "subnet_create_args": {},
-        "subnet_cidr_start": "1.1.0.0/30",
-        "boot_server_args": {}
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "network": {},
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        },
-        "quotas": {
-          "neutron": {
-            "network": -1,
-            "subnet": -1
-          }
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-
-  "NovaServers.boot_server_and_list_interfaces": [
-    {
-      "args": {
-        "flavor": {
-          "name": "{{flavor_name}}"
-        },
-        "image": {
-          "name": "{{image_name}}"
-        }
-      },
-      "runner": {
-        "type": "constant",
-        "times": 4,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        },
-        "network": {
-          "start_cidr": "100.1.0.0/26"
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-
-  "NovaServers.boot_server_associate_and_dissociate_floating_ip": [
-    {
-      "runner": {
-        "type": "constant",
-        "concurrency": 2,
-        "times": 5
-      },
-      "args": {
-        "flavor": {
-          "name": "{{flavor_name}}"
-        },
-        "image": {
-          "name": "cirros"
-        }
-      },
-      "context": {
-        "users": {
-          "users_per_tenant": 2,
-          "tenants": 3
-        },
-        "network": {}
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-
+  
   "NovaServers.boot_server_attach_created_volume_and_live_migrate": [
     {
       "args": {
@@ -893,56 +791,7 @@
       }
     }
   ],
-  "NovaKeypair.create_and_get_keypair": [
-    {
-      "args": {},
-      "runner": {
-        "type": "constant",
-        "times": 10,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 3,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-
-    }
-  ],
-  "NovaServerGroups.create_and_get_server_group": [
-    {
-      "args": {
-        "kwargs": {
-          "policies": [
-            "affinity"
-          ]
-        }
-      },
-      "runner": {
-        "type": "constant",
-        "times": 4,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "NovaAggregates.create_and_list_aggregates": [
+      "NovaAggregates.create_and_list_aggregates": [
     {
       "args": {
         "availability_zone": "nova"
@@ -1377,40 +1226,7 @@
       }
     }
   ],
-  "NovaServers.resize_shutoff_server": [
-    {
-      "args": {
-        "flavor": {
-          "name": "{{flavor_name}}"
-        },
-        "image": {
-          "name": "cirros"
-        },
-        "to_flavor": {
-          "name": "m1.small"
-        },
-        "confirm": true,
-        "force_delete": false
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "NovaServers.shelve_and_unshelve_server": [
+    "NovaServers.shelve_and_unshelve_server": [
     {
       "args": {
         "flavor": {

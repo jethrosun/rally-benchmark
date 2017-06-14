@@ -24,6 +24,7 @@
       }
     }
   ],
+
   "CinderVolumes.create_and_attach_volume": [
     {
       "args": {
@@ -79,38 +80,7 @@
       }
     }
   ],
-  "CinderVolumeTypes.create_and_delete_encryption_type": [
-    {
-      "args": {
-        "provider": "LuksEncryptor",
-        "cipher": "aes-xts-plain64",
-        "key_size": 512,
-        "control_location": "front-end"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 4,
-        "concurrency": 1
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        },
-        "volume_types": [
-          "test_type1",
-          "test_type2",
-          "test_type3",
-          "test_type4"
-        ]
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
+
   "CinderVolumes.create_and_delete_snapshot": [
     {
       "args": {
@@ -132,6 +102,7 @@
       }
     }
   ],
+
   "CinderVolumeTypes.create_and_delete_volume_type": [
     {
       "args": {
@@ -155,6 +126,7 @@
       }
     }
   ],
+
   "CinderVolumes.create_and_delete_volume": [
     {
       "args": {
@@ -192,6 +164,7 @@
       }
     }
   ],
+
   "CinderVolumes.create_and_extend_volume": [
     {
       "args": {
@@ -234,55 +207,7 @@
       }
     }
   ],
-  "CinderQos.create_and_get_qos": [
-    {
-      "args": {
-        "consumer": "both",
-        "write_iops_sec": "10",
-        "read_iops_sec": "1000"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumeTypes.create_and_get_volume_type": [
-    {
-      "args": {
-        "description": "rally tests creating types"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumes.create_and_get_volume": [
+    "CinderVolumes.create_and_get_volume": [
     {
       "args": {
         "size": 1
@@ -361,32 +286,7 @@
       }
     }
   ],
-  "CinderQos.create_and_list_qos": [
-    {
-      "args": {
-        "consumer": "both",
-        "write_iops_sec": "10",
-        "read_iops_sec": "1000"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumes.create_and_list_snapshots": [
+    "CinderVolumes.create_and_list_snapshots": [
     {
       "args": {
         "force": false,
@@ -432,30 +332,7 @@
       }
     }
   ],
-  "CinderVolumeTypes.create_and_list_volume_types": [
-    {
-      "args": {
-        "description": "rally tests creating types"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumes.create_and_list_volume": [
+    "CinderVolumes.create_and_list_volume": [
     {
       "args": {
         "size": 1,
@@ -516,96 +393,6 @@
       }
     }
   ],
-  "CinderQos.create_and_set_qos": [
-    {
-      "args": {
-        "consumer": "back-end",
-        "write_iops_sec": "10",
-        "read_iops_sec": "1000",
-        "set_consumer": "both",
-        "set_write_iops_sec": "11",
-        "set_read_iops_sec": "1001"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumeTypes.create_and_set_volume_type_keys": [
-    {
-      "args": {
-        "description": "rally tests creating types",
-        "volume_type_key": {
-          "volume_backend_name": "LVM_iSCSI"
-        }
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumeTypes.create_and_update_encryption_type": [
-    {
-      "args": {
-        "create_provider": "LuksEncryptor",
-        "create_cipher": "aes-xts-plain64",
-        "create_key_size": 512,
-        "create_control_location": "front-end",
-        "update_provider": "CryptsetupEncryptor",
-        "update_cipher": "aes-xts-plain",
-        "update_key_size": 256,
-        "update_control_location": "back-end"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 4,
-        "concurrency": 1
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        },
-        "volume_types": [
-          "test_type1",
-          "test_type2",
-          "test_type3",
-          "test_type4"
-        ]
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
   "CinderVolumes.create_volume_and_update_readonly_flag": [
     {
       "args": {
@@ -630,31 +417,7 @@
       }
     }
   ],
-  "CinderVolumeTypes.create_and_update_volume_type": [
-    {
-      "args": {
-        "description": "test",
-        "update_description": "test update"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 5,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumes.create_and_update_volume": [
+    "CinderVolumes.create_and_update_volume": [
     {
       "args": {
         "create_volume_kwargs": {},
@@ -818,39 +581,7 @@
       }
     }
   ],
-  "CinderVolumeTypes.create_get_and_delete_encryption_type": [
-    {
-      "args": {
-        "provider": "LuksEncryptor",
-        "cipher": "aes-xts-plain64",
-        "key_size": 512,
-        "control_location": "front-end"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 4,
-        "concurrency": 1
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        },
-        "volume_types": [
-          "test_type1",
-          "test_type2",
-          "test_type3",
-          "test_type4"
-        ]
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumeBackups.create_incremental_volume_backup": [
+ "CinderVolumeBackups.create_incremental_volume_backup": [
     {
       "args": {
         "size": 1,
@@ -1081,30 +812,7 @@
       }
     }
   ],
-  "CinderVolumeTypes.create_volume_type_add_and_list_type_access": [
-    {
-      "args": {
-        "description": "rally tests creating types"
-      },
-      "runner": {
-        "type": "constant",
-        "times": 4,
-        "concurrency": 2
-      },
-      "context": {
-        "users": {
-          "tenants": 2,
-          "users_per_tenant": 2
-        }
-      },
-      "sla": {
-        "failure_rate": {
-          "max": 0
-        }
-      }
-    }
-  ],
-  "CinderVolumes.create_volume": [
+    "CinderVolumes.create_volume": [
     {
       "args": {
         "size": 1

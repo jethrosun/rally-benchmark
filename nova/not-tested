@@ -1,0 +1,2 @@
+NovaServers.boot_server_and_attach_interface, NovaServers.boot_server_and_list_interfaces, NovaServerGroups.create_and_get_server_group, NovaServers.resize_shutoff_server, NovaKeypair.create_and_get_keypair
+create_and_get_server_group
