@@ -791,7 +791,7 @@
       }
     }
   ],
-      "NovaAggregates.create_and_list_aggregates": [
+  "NovaAggregates.create_and_list_aggregates": [
     {
       "args": {
         "availability_zone": "nova"
@@ -1226,7 +1226,7 @@
       }
     }
   ],
-    "NovaServers.shelve_and_unshelve_server": [
+  "NovaServers.shelve_and_unshelve_server": [
     {
       "args": {
         "flavor": {
